@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Fashionee</string>
+    <string name="onboarding1_heading">20% خصم على المنتجات الجديدة</string>
+    <string name="onboarding1_description">احصل على 20% خصم على كافة منتجاتنا الواردة حديثًا من خلال تصفح التطبيق</string>
+    <string name="onboarding2_heading">لا تختر إلا ما يناسبك</string>
+    <string name="onboarding2_description">تشكيلة واسعة من جميع الألوان والأحجام لتجد منهم ما يلائمك</string>
+    <string name="onboarding3_heading">كن دائمًا على الموضة</string>
+    <string name="onboarding3_description">منتجاتنا يتم تحديثها باستمرار وستجد دائمًا الأحدث لدينا</string>
 </resources>

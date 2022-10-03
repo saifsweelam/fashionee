@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Fashionee</string>
+    <string name="onboarding1_heading">20% Discount New Arrival Product</string>
+    <string name="onboarding1_description">Get Up to 20% Discount on all new arrival products in our website</string>
+    <string name="onboarding2_heading">Pick The Most Fit</string>
+    <string name="onboarding2_description">A great collection of all colors and sizes to easily find the piece that suits you</string>
+    <string name="onboarding3_heading">Stay Always Modern</string>
+    <string name="onboarding3_description">Our fashion models are continuesly updated so that they are never old-fashioned</string>
 </resources>
