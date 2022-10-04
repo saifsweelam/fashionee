@@ -6,4 +6,13 @@
     <string name="onboarding2_description">A great collection of all colors and sizes to easily find the piece that suits you</string>
     <string name="onboarding3_heading">Stay Always Modern</string>
     <string name="onboarding3_description">Our fashion models are continuesly updated so that they are never old-fashioned</string>
+    <string name="welcome">Welcome</string>
+    <string name="login_description">Please login using credentials or via social media</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="or">Or</string>
+    <string name="continue_with_facebook">Continue with Facebook</string>
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="continue_with_apple">Continue with Apple</string>
 </resources>

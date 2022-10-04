@@ -7,4 +7,13 @@
     <string name="onboarding2_description">تشكيلة واسعة من جميع الألوان والأحجام لتجد منهم ما يلائمك</string>
     <string name="onboarding3_heading">كن دائمًا على الموضة</string>
     <string name="onboarding3_description">منتجاتنا يتم تحديثها باستمرار وستجد دائمًا الأحدث لدينا</string>
+    <string name="welcome">مرحبًا</string>
+    <string name="login_description">رجاء قم بتسجيل الدخول عن طريق البريد الإلكتروني وكلمة السر أو عن طريق مواقع التواصل الإجتماعي</string>
+    <string name="email">البريد الإلكتروني</string>
+    <string name="password">كلمة المرور</string>
+    <string name="login">تسجيل دخول</string>
+    <string name="or">أو</string>
+    <string name="continue_with_facebook">دخول بحساب Facebook</string>
+    <string name="continue_with_google">دخول بحساب Google</string>
+    <string name="continue_with_apple">دخول بحساب Apple</string>
 </resources>

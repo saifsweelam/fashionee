@@ -3,9 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Programming/Android/ODC_AMIT/Fashionee/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.151" />
         <entry key="..\:/Programming/Android/ODC_AMIT/Fashionee/app/src/main/res/drawable/onboarding_indicator_active.xml" value="0.151" />
         <entry key="..\:/Programming/Android/ODC_AMIT/Fashionee/app/src/main/res/drawable/onboarding_indicator_inactive.xml" value="0.151" />
-        <entry key="..\:/Programming/Android/ODC_AMIT/Fashionee/app/src/main/res/layout/activity_login.xml" value="0.28888888888888886" />
+        <entry key="..\:/Programming/Android/ODC_AMIT/Fashionee/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Programming/Android/ODC_AMIT/Fashionee/app/src/main/res/layout/activity_main.xml" value="0.28888888888888886" />
         <entry key="..\:/Programming/Android/ODC_AMIT/Fashionee/app/src/main/res/layout/activity_onboarding.xml" value="0.25" />
         <entry key="..\:/Programming/Android/ODC_AMIT/Fashionee/app/src/main/res/layout/onboarding_page_layout.xml" value="0.25" />
