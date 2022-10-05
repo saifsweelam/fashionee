@@ -15,4 +15,9 @@
     <string name="continue_with_facebook">Continue with Facebook</string>
     <string name="continue_with_google">Continue with Google</string>
     <string name="continue_with_apple">Continue with Apple</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="name">Name</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up_description">Create a new account to get access</string>
+    <string name="passwords_dont_match">Passwords don\'t match</string>
 </resources>

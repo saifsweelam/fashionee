@@ -10,9 +10,11 @@ import retrofit2.http.POST;
 
 public interface ApiService {
 
+    @Headers("Content-Type: application/json")
     @POST("users/")
     Call<User> createUser(@Body String body);
 
+    @Headers("Content-Type: application/json")
     @POST("users/is-available")
     Call<UserActionResponse> checkEmailAvailable(@Body String body);
 

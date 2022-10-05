@@ -6,7 +6,7 @@ public class User {
     private String password;
     private String name;
     private String role;
-    private String avatar;
+    private String avatar = "https://www.cbns.org.au/wp-content/uploads/2017/05/img_placeholder_avatar.jpg";
 
     public User(String email, String password) {
         this.email = email;
@@ -17,11 +17,10 @@ public class User {
         this.email = email;
     }
 
-    public User(String email, String password, String name, String avatar) {
+    public User(String email, String password, String name) {
         this.email = email;
         this.password = password;
         this.name = name;
-        this.avatar = avatar;
     }
 
     public User(int id, String email, String password, String name, String role, String avatar) {

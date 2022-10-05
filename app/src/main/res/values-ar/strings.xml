@@ -16,4 +16,9 @@
     <string name="continue_with_facebook">دخول بحساب Facebook</string>
     <string name="continue_with_google">دخول بحساب Google</string>
     <string name="continue_with_apple">دخول بحساب Apple</string>
+    <string name="sign_up">حساب جديد</string>
+    <string name="name">الإسم</string>
+    <string name="confirm_password">تأكيد كلمة المرور</string>
+    <string name="sign_up_description">أنشئ حساب جديد لتتمكن من الدخول إلى التطبيق</string>
+    <string name="passwords_dont_match">كلمة المرور غير متطابقة</string>
 </resources>
