@@ -3,6 +3,7 @@ package com.saifsweelam.fashionee;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.util.Log;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -60,15 +61,15 @@ public class Authentication {
     }
 
     public void storeUserData() {
-        Call<User> request = apiService.getCurrentUser(getAuthenticationHeader());
+        Call<User> request = apiService.getCurrentUser(getAuthorizationHeader());
 
         request.enqueue(new Callback<User>() {
             @Override
             public void onResponse(Call<User> call, Response<User> response) {
                 if (response.isSuccessful()) {
                     User user = response.body();
-
                     assert user != null;
+
                     editor.putString("name", user.getName());
                     editor.putString("avatar", user.getAvatar());
                     editor.apply();
@@ -135,7 +136,7 @@ public class Authentication {
         return sharedPreferences.getString("avatar", null);
     }
 
-    public String getAuthenticationHeader() {
+    public String getAuthorizationHeader() {
         return "Bearer " + sharedPreferences.getString("accessToken", null);
     }
 

@@ -23,5 +23,5 @@ public interface ApiService {
     Call<UserActionResponse> loginUser(@Body String body);
 
     @GET("auth/profile")
-    Call<User> getCurrentUser(@Header("Authentication") String authenticationHeader);
+    Call<User> getCurrentUser(@Header("Authorization") String authorizationHeader);
 }
