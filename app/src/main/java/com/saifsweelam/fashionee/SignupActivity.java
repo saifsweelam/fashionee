@@ -23,10 +23,6 @@ public class SignupActivity extends AppCompatActivity {
     EditText passwordConfirmInput;
     Button signupButton;
 
-    Gson gson;
-    RetrofitClient retrofitClient;
-    ApiService apiService;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,9 +34,8 @@ public class SignupActivity extends AppCompatActivity {
         passwordConfirmInput = findViewById(R.id.passwordConfirmInput);
         signupButton = findViewById(R.id.signupButton);
 
-        gson = new Gson();
-        retrofitClient = new RetrofitClient();
-        apiService = retrofitClient.getApiService();
+        Authentication authentication = new Authentication(this);
+
 
         signupButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,22 +55,8 @@ public class SignupActivity extends AppCompatActivity {
                 }
 
                 User user = new User(email, password, name);
-                String requestBody = gson.toJson(user);
-                Log.d("userJson", requestBody);
 
-                Call<User> request = apiService.createUser(requestBody);
-
-                request.enqueue(new Callback<User>() {
-                    @Override
-                    public void onResponse(Call<User> call, Response<User> response) {
-                        Log.d("userJson", response.toString());
-                    }
-
-                    @Override
-                    public void onFailure(Call<User> call, Throwable t) {
-                        Log.d("userJson", t.toString());
-                    }
-                });
+                authentication.signup(user);
             }
         });
     }

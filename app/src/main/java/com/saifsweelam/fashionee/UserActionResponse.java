@@ -8,6 +8,8 @@ public class UserActionResponse {
     @SerializedName("access_token")
     private String accessToken;
 
+    public UserActionResponse() {}
+
     public UserActionResponse(boolean isAvailable) {
         this.isAvailable = isAvailable;
     }

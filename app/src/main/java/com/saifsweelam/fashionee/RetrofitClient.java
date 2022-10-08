@@ -10,7 +10,7 @@ public class RetrofitClient {
 
     private static final String BASE_URL = "https://api.escuelajs.co/api/v1/";
 
-    RetrofitClient() {
+    private RetrofitClient() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(ScalarsConverterFactory.create())
@@ -20,7 +20,7 @@ public class RetrofitClient {
         apiService = retrofit.create(ApiService.class);
     }
 
-    public RetrofitClient getInstance() {
+    public static RetrofitClient getInstance() {
         if (instance == null) instance = new RetrofitClient();
         return instance;
     }

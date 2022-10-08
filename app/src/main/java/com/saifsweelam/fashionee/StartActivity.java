@@ -22,6 +22,10 @@ public class StartActivity extends AppCompatActivity {
         loginButton = findViewById(R.id.loginButton);
         signupButton = findViewById(R.id.signupButton);
 
+        Authentication auth = new Authentication(this);
+
+        if (auth.isLoggedIn()) auth.goToMain();
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

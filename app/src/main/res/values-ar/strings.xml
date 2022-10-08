@@ -21,4 +21,6 @@
     <string name="confirm_password">تأكيد كلمة المرور</string>
     <string name="sign_up_description">أنشئ حساب جديد لتتمكن من الدخول إلى التطبيق</string>
     <string name="passwords_dont_match">كلمة المرور غير متطابقة</string>
+    <string name="login_incorrect">تأكد من إدخال بياناتك الصحيحة</string>
+    <string name="network_failed">حدث خطأ ما. تأكد من اتصال الانترنت وأعد المحاولة</string>
 </resources>

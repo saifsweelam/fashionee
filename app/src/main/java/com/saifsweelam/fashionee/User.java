@@ -8,6 +8,8 @@ public class User {
     private String role;
     private String avatar = "https://www.cbns.org.au/wp-content/uploads/2017/05/img_placeholder_avatar.jpg";
 
+    public User() {}
+
     public User(String email, String password) {
         this.email = email;
         this.password = password;

@@ -20,4 +20,6 @@
     <string name="confirm_password">Confirm Password</string>
     <string name="sign_up_description">Create a new account to get access</string>
     <string name="passwords_dont_match">Passwords don\'t match</string>
+    <string name="login_incorrect">Your Login Credentials seem to be incorrect.</string>
+    <string name="network_failed">Process Failed. Please Check Network then try again.</string>
 </resources>

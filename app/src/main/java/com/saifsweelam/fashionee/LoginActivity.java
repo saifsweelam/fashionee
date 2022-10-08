@@ -2,6 +2,7 @@ package com.saifsweelam.fashionee;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -20,12 +21,6 @@ public class LoginActivity extends AppCompatActivity {
     EditText passwordInput;
     Button loginButton;
 
-    Gson gson;
-    RetrofitClient retrofitClient;
-    ApiService apiService;
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,30 +30,13 @@ public class LoginActivity extends AppCompatActivity {
         passwordInput = findViewById(R.id.passwordInput);
         loginButton = findViewById(R.id.loginButton);
 
-        gson = new Gson();
-        retrofitClient = new RetrofitClient();
-        apiService = retrofitClient.getApiService();
+        Authentication authentication = new Authentication(this);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 User user = new User(emailInput.getText().toString(), passwordInput.getText().toString());
-
-                String requestBody = gson.toJson(user);
-                Log.d("userJson", requestBody);
-                Call<UserActionResponse> request = apiService.loginUser(requestBody);
-
-                request.enqueue(new Callback<UserActionResponse>() {
-                    @Override
-                    public void onResponse(Call<UserActionResponse> call, Response<UserActionResponse> response) {
-                        Log.d("userJson", response.raw().toString());
-                    }
-
-                    @Override
-                    public void onFailure(Call<UserActionResponse> call, Throwable t) {
-                        Log.e("userJson", t.toString());
-                    }
-                });
+                authentication.login(user);
             }
         });
     }
