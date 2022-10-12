@@ -23,4 +23,8 @@
     <string name="passwords_dont_match">كلمة المرور غير متطابقة</string>
     <string name="login_incorrect">تأكد من إدخال بياناتك الصحيحة</string>
     <string name="network_failed">حدث خطأ ما. تأكد من اتصال الانترنت وأعد المحاولة</string>
+    <string name="home">الرئيسية</string>
+    <string name="cart">العربة</string>
+    <string name="notifications">الإشعارات</string>
+    <string name="profile">حسابي</string>
 </resources>
