@@ -13,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -89,7 +90,7 @@ public class HomeFragment extends Fragment {
                     assert response.body() != null;
                     Log.d("categoriesResponse", response.body().toString());
                     categories = response.body();
-                    categoriesAdapter = new TagsAdapter(categories);
+                    categoriesAdapter = new TagsAdapter(categories, getActivity().getSupportFragmentManager());
                     categoriesRecyclerView.setAdapter(categoriesAdapter);
                     categoriesRecyclerView.setLayoutManager(new LinearLayoutManager(
                             getContext(),
