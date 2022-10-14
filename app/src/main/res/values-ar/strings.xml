@@ -35,4 +35,8 @@
     <string name="price">السعر</string>
     <string name="add_to_cart">إضافة إلى العربة</string>
     <string name="search_results">نتائج البحث</string>
+    <string name="add_to_cart_succeed">تم إضافة المنتج للعربة</string>
+    <string name="add_to_cart_fail">فشلت إضافة المنتج للعربة</string>
+    <string name="pieces">قطع</string>
+    <string name="checkout">إتمام الشراء</string>
 </resources>

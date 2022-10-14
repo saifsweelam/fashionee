@@ -34,4 +34,8 @@
     <string name="price">Price</string>
     <string name="add_to_cart">Add to Cart</string>
     <string name="search_results">Search Results</string>
+    <string name="add_to_cart_succeed">Product Added to Cart</string>
+    <string name="add_to_cart_fail">Failed to add Product to Cart</string>
+    <string name="pieces">Pieces</string>
+    <string name="checkout">Checkout</string>
 </resources>

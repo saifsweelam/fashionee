@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.button.MaterialButton;
 
@@ -26,7 +28,11 @@ public class ProductActivity extends AppCompatActivity implements Callback<Produ
     MaterialButton increaseQuantityButton;
     MaterialButton decreaseQuantityButton;
 
+    Button addToCartButton;
+
     TextView productPriceView;
+
+    CartDatabaseHelper cartDatabaseHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,7 +48,10 @@ public class ProductActivity extends AppCompatActivity implements Callback<Produ
 
         productPriceView = findViewById(R.id.productPriceView);
 
+        addToCartButton = findViewById(R.id.addToCartButton);
+
         apiService = RetrofitClient.getInstance().getApiService();
+        cartDatabaseHelper = new CartDatabaseHelper(this);
 
         Call<Product> productRequest = apiService.getProduct(productId);
         productRequest.enqueue(this);
@@ -56,6 +65,23 @@ public class ProductActivity extends AppCompatActivity implements Callback<Produ
 
             increaseQuantityButton.setOnClickListener(v -> updateQuantity(1));
             decreaseQuantityButton.setOnClickListener(v -> updateQuantity(-1));
+
+            addToCartButton.setOnClickListener(v -> {
+                long status = cartDatabaseHelper.addCartItem(product, quantity);
+                if (status != -1) {
+                    Toast.makeText(
+                            this,
+                            getResources().getString(R.string.add_to_cart_succeed),
+                            Toast.LENGTH_LONG
+                    ).show();
+                } else {
+                    Toast.makeText(
+                            this,
+                            getResources().getString(R.string.add_to_cart_fail),
+                            Toast.LENGTH_LONG
+                    ).show();
+                }
+            });
         } else {
             startActivity(new Intent(this, MainActivity.class));
             finish();
