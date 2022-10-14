@@ -77,6 +77,8 @@ public class MainActivity extends AppCompatActivity {
 
         mainViewPager.setAdapter(mainPagerAdapter);
 
+        mainViewPager.setUserInputEnabled(false);
+
         new TabLayoutMediator(mainTabLayout, mainViewPager, (tab, position) -> {
             tab.setIcon(tabs.get(position).getIcon());
             tab.setText(position == 0 ? tabs.get(position).getTitle() : "");

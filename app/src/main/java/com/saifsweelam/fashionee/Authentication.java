@@ -55,7 +55,7 @@ public class Authentication {
 
             @Override
             public void onFailure(Call<UserActionResponse> call, Throwable t) {
-                toastNetworkError();
+                Helper.toastNetworkError(context);
             }
         });
     }
@@ -75,13 +75,13 @@ public class Authentication {
                     editor.apply();
                     goToMain();
                 } else {
-                    toastNetworkError();
+                    Helper.toastNetworkError(context);
                 }
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                toastNetworkError();
+                Helper.toastNetworkError(context);
             }
         });
     }
@@ -104,13 +104,13 @@ public class Authentication {
                     User createdUser = response.body();
                     login(createdUser);
                 } else {
-                    toastNetworkError();
+                    Helper.toastNetworkError(context);
                 }
             }
 
             @Override
             public void onFailure(Call<User> call, Throwable t) {
-                toastNetworkError();
+                Helper.toastNetworkError(context);
             }
         });
     }
@@ -146,11 +146,4 @@ public class Authentication {
         return accessToken != null;
     }
 
-    private void toastNetworkError() {
-        Toast.makeText(
-                context,
-                context.getResources().getString(R.string.network_failed),
-                Toast.LENGTH_LONG
-        ).show();
-    }
 }
