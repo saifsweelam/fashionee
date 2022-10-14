@@ -1,8 +1,10 @@
 package com.saifsweelam.fashionee.fragments.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.widget.SearchView;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,6 +25,7 @@ import com.saifsweelam.fashionee.Product;
 import com.saifsweelam.fashionee.ProductsViewer;
 import com.saifsweelam.fashionee.R;
 import com.saifsweelam.fashionee.RetrofitClient;
+import com.saifsweelam.fashionee.SearchActivity;
 import com.saifsweelam.fashionee.TagsAdapter;
 
 import org.jetbrains.annotations.Contract;
@@ -44,6 +47,8 @@ public class HomeFragment extends Fragment {
 
     private CardView sampleProductParentView;
 
+    private SearchView searchView;
+
     private RecyclerView categoriesRecyclerView;
     private RecyclerView topProductsRecyclerView;
 
@@ -64,10 +69,27 @@ public class HomeFragment extends Fragment {
 
         sampleProductParentView = view.findViewById(R.id.sampleProductParentView);
 
+        searchView = view.findViewById(R.id.searchView);
+
         categoriesRecyclerView = view.findViewById(R.id.categoriesRecyclerView);
         topProductsRecyclerView = view.findViewById(R.id.topProductsRecyclerView);
 
         apiService = RetrofitClient.getInstance().getApiService();
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Intent intent = new Intent(getContext(), SearchActivity.class);
+                intent.putExtra("query", query);
+                startActivity(intent);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
 
         ProductsViewer productsViewer = new ProductsViewer(topProductsRecyclerView);
         productsViewer.loadProducts(20, 33);
