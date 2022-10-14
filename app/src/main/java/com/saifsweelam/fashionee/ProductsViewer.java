@@ -58,7 +58,11 @@ public class ProductsViewer implements Callback<ProductsResponse> {
         ));
     }
 
-
+    public static void openProduct(Context context, int productId) {
+        Intent intent = new Intent(context, ProductActivity.class);
+        intent.putExtra("productId", productId);
+        context.startActivity(intent);
+    }
 
     public static void displayProduct(Product product, View parentView, boolean shortDescription, boolean isClickable) {
         ImageView productImageView = parentView.findViewById(R.id.productImageView);
@@ -70,12 +74,7 @@ public class ProductsViewer implements Callback<ProductsResponse> {
         DotsIndicator productImagesIndicator = parentView.findViewById(R.id.productImagesIndicator);
         MaterialButton productOpenButton = parentView.findViewById(R.id.productOpenButton);
 
-//        View.OnClickListener onClickListener = new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                openProduct(parentView.getContext(), product.getId());
-//            }
-//        };
+        View.OnClickListener onClickListener = v -> openProduct(parentView.getContext(), product.getId());
 
         if (productTitleView != null) productTitleView.setText(product.getTitle());
         if (productDescriptionView != null) {
@@ -97,8 +96,8 @@ public class ProductsViewer implements Callback<ProductsResponse> {
             productImagesViewPager.setAdapter(productImagesAdapter);
             productImagesIndicator.setViewPager2(productImagesViewPager);
         }
-//        if (productOpenButton != null) productOpenButton.setOnClickListener(onClickListener);
-//        if (isClickable) parentView.setOnClickListener(onClickListener);
+        if (productOpenButton != null) productOpenButton.setOnClickListener(onClickListener);
+        if (isClickable) parentView.setOnClickListener(onClickListener);
     }
 
     @Override
