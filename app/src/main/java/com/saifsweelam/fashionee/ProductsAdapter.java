@@ -42,28 +42,14 @@ public class ProductsAdapter extends RecyclerView.Adapter<ProductsAdapter.Produc
 
     static class ProductsViewHolder extends RecyclerView.ViewHolder {
         private final View view;
-        private final ImageView productImageView;
-        private final TextView productTitleView;
-        private final TextView productDescriptionView;
-        private final TextView productPriceView;
 
         public ProductsViewHolder(@NonNull View itemView) {
             super(itemView);
             view = itemView;
-            productImageView = itemView.findViewById(R.id.productImageView);
-            productTitleView = itemView.findViewById(R.id.productTitleView);
-            productDescriptionView = itemView.findViewById(R.id.productDescriptionView);
-            productPriceView = itemView.findViewById(R.id.productPriceView);
         }
 
         public void setProduct(Product product) {
-            productTitleView.setText(product.getTitle());
-            productDescriptionView.setText(product.getDescription().substring(0, 30));
-            productPriceView.setText("$"+product.getPrice());
-            Glide.with(view.getContext())
-                    .load(product.getThumbnail())
-                    .centerCrop()
-                    .into(productImageView);
+            ProductsViewer.displayProduct(product, view, true, true);
         }
     }
 }

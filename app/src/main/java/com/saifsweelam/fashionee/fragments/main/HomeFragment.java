@@ -3,6 +3,7 @@ package com.saifsweelam.fashionee.fragments.main;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -40,10 +41,8 @@ public class HomeFragment extends Fragment {
 
     private List<String> categories;
 
-    private ImageView sampleProductImageView;
-    private TextView sampleProductTitleView;
-    private TextView sampleProductDescriptionView;
-    private TextView sampleProductPriceView;
+    private CardView sampleProductParentView;
+
     private RecyclerView categoriesRecyclerView;
     private RecyclerView topProductsRecyclerView;
 
@@ -62,13 +61,10 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        sampleProductParentView = view.findViewById(R.id.sampleProductParentView);
+
         categoriesRecyclerView = view.findViewById(R.id.categoriesRecyclerView);
         topProductsRecyclerView = view.findViewById(R.id.topProductsRecyclerView);
-
-        sampleProductImageView = view.findViewById(R.id.sampleProductImageView);
-        sampleProductTitleView = view.findViewById(R.id.sampleProductTitleView);
-        sampleProductDescriptionView = view.findViewById(R.id.sampleProductDescriptionView);
-        sampleProductPriceView = view.findViewById(R.id.sampleProductPriceView);
 
         apiService = RetrofitClient.getInstance().getApiService();
 
@@ -124,14 +120,7 @@ public class HomeFragment extends Fragment {
                     Product product = response.body();
 
                     assert product != null;
-                    sampleProductTitleView.setText(product.getTitle());
-                    sampleProductDescriptionView.setText(product.getDescription().substring(0, 30));
-                    sampleProductPriceView.setText("$"+product.getPrice());
-
-                    Glide.with(getContext())
-                            .load(product.getThumbnail())
-                            .centerCrop()
-                            .into(sampleProductImageView);
+                    ProductsViewer.displayProduct(product, sampleProductParentView, true, false);
                 } else {
                     displaySampleProduct();
                 }
