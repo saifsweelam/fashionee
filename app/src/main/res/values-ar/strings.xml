@@ -39,4 +39,6 @@
     <string name="add_to_cart_fail">فشلت إضافة المنتج للعربة</string>
     <string name="pieces">قطع</string>
     <string name="checkout">إتمام الشراء</string>
+    <string name="logout">تسجيل الخروج</string>
+    <string name="switch_language">تغيير اللغة</string>
 </resources>

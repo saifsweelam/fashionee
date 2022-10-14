@@ -72,6 +72,7 @@ public class Authentication {
 
                     editor.putString("name", user.getName());
                     editor.putString("avatar", user.getAvatar());
+                    editor.putString("email", user.getEmail());
                     editor.apply();
                     goToMain();
                 } else {
@@ -134,6 +135,10 @@ public class Authentication {
 
     public String getCurrentUserAvatar() {
         return sharedPreferences.getString("avatar", null);
+    }
+
+    public String getCurrentUserEmail() {
+        return sharedPreferences.getString("email", null);
     }
 
     public String getAuthorizationHeader() {

@@ -8,11 +8,13 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.List;
 
 public class Helper {
 
-    public static void toastNetworkError(Context context) {
+    public static void toastNetworkError(@NotNull Context context) {
         Toast.makeText(
                 context,
                 context.getResources().getString(R.string.network_failed),

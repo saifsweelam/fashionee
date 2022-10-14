@@ -46,7 +46,10 @@ public class MainActivity extends AppCompatActivity {
                 .into(avatarView);
 
         mainPagerAdapter = new PagerAdapter(getSupportFragmentManager(), getLifecycle());
+    }
 
+    @Override
+    protected void onResume() {
         ArrayList<TabInfo> tabs = new ArrayList<>();
 
         tabs.add(new TabInfo(
@@ -100,5 +103,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+        super.onResume();
     }
 }

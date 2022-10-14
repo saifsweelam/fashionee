@@ -120,14 +120,14 @@ public class HomeFragment extends Fragment {
                             false
                     ));
                 } else {
-                    Helper.toastNetworkError(getContext());
+                    Helper.toastNetworkError(requireContext());
                 }
             }
 
             @Override
             public void onFailure(Call<List<String>> call, Throwable t) {
                 Log.d("categoriesResponse", t.toString());
-                Helper.toastNetworkError(getContext());
+                Helper.toastNetworkError(requireContext());
             }
         });
     }
@@ -151,7 +151,7 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onFailure(Call<Product> call, Throwable t) {
-                Helper.toastNetworkError(getContext());
+                Helper.toastNetworkError(requireContext());
             }
         });
     }

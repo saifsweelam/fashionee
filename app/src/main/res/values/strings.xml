@@ -38,4 +38,6 @@
     <string name="add_to_cart_fail">Failed to add Product to Cart</string>
     <string name="pieces">Pieces</string>
     <string name="checkout">Checkout</string>
+    <string name="logout">Logout</string>
+    <string name="switch_language">Switch Language</string>
 </resources>
